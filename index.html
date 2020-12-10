@@ -22,16 +22,32 @@
     <title>Work Day Scheduler</title>
   </head>
 
-  <body>
+  <body id="bootstrap-overrides">
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+      <p id="currentDay" class="lead">(don't forget to put the date here)</p>
     </header>
-    <div class="container">
+    <div class="container ">
+      <div class="row bg-secondary rounded-pill hour align-items-center" id="0900">
+        <div class="col-1 text-light text-center ">
+          <p class="ml-5 fw-bold">0800</p>
+        </div>
+        <div class="col-4">
+          <div class="input-group flex-nowrap">
+            <input type="text" class="form-control rounded-pill"  aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+        </div>
+        <div class="col-1 ml-auto mr-3"> 
+          <button id="saveButton" class="btn btn-primary rounded-pill align-middle">Save</button>
+        </div>
+          
+        </div>
+      </div>
       <!-- Timeblocks go here -->
     </div>
 
+    <script src="./script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
