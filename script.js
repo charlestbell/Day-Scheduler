@@ -26,7 +26,7 @@
     hour: 1600
     note:""
 },{
-    hour: 1700
+    hour: 1700zs
     note:""
 }]
 
