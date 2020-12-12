@@ -46,6 +46,11 @@ currentTime = dayjs().format("dddd, MMMM D");
 console.log(currentTime);
 $("#currentDay").text(currentTime);
 
+//Write a function that grabs from local storage and puts it on screen
+$("input").each(function () {
+  $(this).val(localStorage.getItem($(this).data("hour")));
+});
+
 //function that renders the contents of the hours to the screen
 
 //For each loop
@@ -56,8 +61,8 @@ $("#currentDay").text(currentTime);
 
 function hourColors() {
   //get the day.js time
-  let currentHour = 14;
-  // dayjs().format("HH");
+  let currentHour = dayjs().format("HH");
+
   console.log(currentHour);
   //Loop through the div class'container' and
   $("input").each(function () {
@@ -73,7 +78,7 @@ function hourColors() {
     if (hour < currentHour) {
       $(this).parents().eq(2).removeClass("future present").addClass("past");
     }
-    if (hour === currentHour) {
+    if (hour == currentHour) {
       $(this).parents().eq(2).removeClass("future past").addClass("present");
     }
     if (hour > currentHour) {
@@ -81,8 +86,13 @@ function hourColors() {
     }
   });
 }
-
 //A function called SaveNotes that first firnds the id of parent div of the save button which was clicked and overwrites the main object with that note and saves it to local storage
+$("button").on("click", function () {
+  var note = $(this).parent().siblings(".col-6").find("input").val();
+  var hour = $(this).parent().siblings(".col-6").find("input").data("hour");
+  console.log(`Note ${note} Hour ${hour}`);
+  localStorage.setItem(hour, note);
+});
 
 $(document).ready(function () {
   hourColors();
