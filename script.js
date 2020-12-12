@@ -1,56 +1,90 @@
- // variables
- let currentTime;
- //An object that holds the hour and the note for that hour
- let masterNotes [{
-     hour: 0900
-     note:""
- },{
-    hour: 1000
-    note:""
-},{
-    hour: 1100
-    note:""
-},{
-    hour: 1200
-    note:""
-},{
-    hour: 1300
-    note:""
-},{
-    hour: 1400
-    note:""
-},{
-    hour: 1500
-    note:""
-},{
-    hour: 1600
-    note:""
-},{
-    hour: 1700zs
-    note:""
-}]
+// variables
+let currentTime;
+//An object that holds the hour and the note for that hour
+let masterNotes = [
+  {
+    hour: 0900,
+    note: " ",
+  },
+  {
+    hour: 1000,
+    note: "",
+  },
+  {
+    hour: 1100,
+    note: "",
+  },
+  {
+    hour: 1200,
+    note: "",
+  },
+  {
+    hour: 1300,
+    note: "",
+  },
+  {
+    hour: 1400,
+    note: "",
+  },
+  {
+    hour: 1500,
+    note: "",
+  },
+  {
+    hour: 1600,
+    note: "",
+  },
+  {
+    hour: 1700,
+    note: "",
+  },
+];
 
- //Function that grabs the current time and stores it in currentTime
- currentTime = dayjs().format("dddd, MMMM D");
- console.log(currentTime);
- $("#currentDay").text(currentTime);
+//Function that grabs the current time and stores it in currentTime
+//A function that formats the current date and displays it in the heading row
+currentTime = dayjs().format("dddd, MMMM D");
+console.log(currentTime);
+$("#currentDay").text(currentTime);
 
- //A function that formats the current date and displays it in the heading row
+//function that renders the contents of the hours to the screen
 
- //function that renders the contents of the hours to the screen
+//For each loop
 
- //For each loop
+//Save each hour's identifier in a data-hour field
 
- //Save each hour's identifier in a data-hour field
+//A function that updates the Css colors for the hour divs to indicate past, present, future
 
- //A function that updates the Css colors for the hour divs to indicate past, present, future
+function hourColors() {
+  //get the day.js time
+  let currentHour = 14;
+  // dayjs().format("HH");
+  console.log(currentHour);
+  //Loop through the div class'container' and
+  $("input").each(function () {
+    //Delete the incorrect classes
+    // console.log($(this).data("hour"));
+    //at each div's input, read the data field.
+    //compare it to the current time with .diff
+    //If it's in the past, mark it gray
+    //if it's in the present, red
+    //if it's in the future, green
+    let hour = $(this).data("hour");
+    // console.log($(this).parents().eq(3));
+    if (hour < currentHour) {
+      $(this).parents().eq(2).removeClass("future present").addClass("past");
+    }
+    if (hour === currentHour) {
+      $(this).parents().eq(2).removeClass("future past").addClass("present");
+    }
+    if (hour > currentHour) {
+      $(this).parents().eq(2).removeClass("present past").addClass("future");
+    }
+  });
+}
 
- //A function called SaveNotes that first firnds the id of parent div of the save button which was clicked and overwrites the main object with that note and saves it to local storage
-
-
+//A function called SaveNotes that first firnds the id of parent div of the save button which was clicked and overwrites the main object with that note and saves it to local storage
 
 $(document).ready(function () {
- 
-
+  hourColors();
   //Click listener on the saveNotes buttons and executes the save function
 });
