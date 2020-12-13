@@ -1,4 +1,4 @@
-#### Developer C.T. Bell
+##### Developer: C.T. Bell
 
 # Day Scheduler
 
@@ -17,29 +17,12 @@ Enter your task for each hour in the task field and click save. Now your day is 
 - Saves your hourly tasks to local storage
 - The hours are color coded live for past, present and future
 - Built using bootstrap
+- Clean, inviting design
 
 ## Upcoming Features
 
-- Mobile Responsive
+- Mobile Responsiveness
 
-## Screenshots
+## Screenshot
 
-###
-
-![Start](./Assets/start.jpg?raw=true "Start")
-
-### Quiz
-
-![Quiz](./Assets/quiz.jpg?raw=true "Quiz")
-
-### Correct
-
-![Correct](./Assets/correct.jpg?raw=true "Correct")
-
-### Enter Initials
-
-![Enter Initials](./Assets/enter_initials.jpg?raw=true "Ask include Numbers?")
-
-### Highscores
-
-![Highscores](./Assets/highscores.jpg?raw=true "Password printed to screen")
+![Screenshot](./Assets/screenshot.jpg?raw=true "Screenshot")

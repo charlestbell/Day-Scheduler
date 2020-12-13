@@ -43,7 +43,6 @@ let masterNotes = [
 //Function that grabs the current time and stores it in currentTime
 //A function that formats the current date and displays it in the heading row
 currentTime = dayjs().format("dddd, MMMM D");
-console.log(currentTime);
 $("#currentDay").text(currentTime);
 
 //Write a function that grabs from local storage and puts it on screen
@@ -63,7 +62,6 @@ function hourColors() {
   //get the day.js time
   let currentHour = dayjs().format("HH");
 
-  console.log(currentHour);
   //Loop through the div class'container' and
   $("input").each(function () {
     //Delete the incorrect classes
@@ -88,8 +86,8 @@ function hourColors() {
 }
 //A function called SaveNotes that first firnds the id of parent div of the save button which was clicked and overwrites the main object with that note and saves it to local storage
 $("button").on("click", function () {
-  var note = $(this).parent().siblings(".col-6").find("input").val();
-  var hour = $(this).parent().siblings(".col-6").find("input").data("hour");
+  var note = $(this).siblings(".col-6").find("input").val();
+  var hour = $(this).siblings(".col-6").find("input").data("hour");
   console.log(`Note ${note} Hour ${hour}`);
   localStorage.setItem(hour, note);
 });

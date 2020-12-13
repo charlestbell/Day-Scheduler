@@ -1,11 +1,48 @@
+@font-face {
+  font-family: "gilroyextrabold";
+  src: url("./fontGilroyExtraBold/gilroy-extrabold-webfont.woff2")
+      format("woff2"),
+    url("./fontGilroyExtraBold/gilroy-extrabold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1;
-  background-color: #EDEDE4;
-
+  background-color: #edede4;
 }
 
+#bootstrap-overrides #headline1 {
+  font-size: 39px;
+  color: #30434f;
+  font-family: "gilroyextrabold";
+  font-weight: normal;
+  font-style: normal;
+}
+#bootstrap-overrides #subtitle1 {
+  font-size: 18px;
+  color: #415c6e;
+  font-family: "gilroyextrabold";
+  font-weight: normal;
+  font-style: normal;
+}
+
+#bootstrap-overrides #currentDay {
+  font-size: 17px;
+  color: grey;
+  font-family: "gilroyextrabold";
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+  top: -80px;
+  right: -30px;
+}
+
+#bootstrap-overrides h4 {
+  font-size: 18px;
+}
 textarea {
   background: transparent;
   border: none;
@@ -16,7 +53,7 @@ textarea {
 }
 
 .jumbotron {
-  text-align: center;
+  text-align: left;
   background-color: transparent;
   color: black;
   border-radius: 0;
@@ -42,14 +79,12 @@ textarea {
 }
 
 .hour {
-  /* position: absolute; */
-  top: 50%;
-  left: 64%;
-  transform: translate(-50%, -53%);
+  top: 4px;
+  left: 55%;
 }
 
 .past {
-  background-color: #6c757d;
+  background-color: #30434f;
   color: white;
 }
 
