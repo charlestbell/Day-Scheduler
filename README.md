@@ -19,6 +19,11 @@ Enter your task for each hour in the task field and click save. Now your day is 
 - Built using bootstrap
 - Clean, inviting design
 
+## Technologies
+
+- Bootstrap
+- Jquery
+
 ## Upcoming Features
 
 - Mobile Responsiveness
