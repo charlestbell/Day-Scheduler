@@ -30,4 +30,4 @@ Enter your task for each hour in the task field and click save. Now your day is 
 
 ## Screenshot
 
-![Screenshot](Assets/screenshot.jpg?raw=true "Screenshot")
+![Screenshot](Assets/screenshot.jpg "Screenshot")
